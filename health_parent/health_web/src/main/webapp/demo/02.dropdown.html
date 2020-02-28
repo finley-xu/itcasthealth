@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!-- 引入ElementUI样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入ElementUI组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<style>
+    .el-dropdown-link {
+        cursor: pointer;
+        color: #409EFF;
+    }
+    .el-icon-arrow-down {
+        font-size: 12px;
+    }
+</style>
+<body>
+    <div id="app">
+        <h1>方式一：hover激活事件</h1>
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+            <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>退出系统</el-dropdown-item>
+                <el-dropdown-item disabled>修改密码</el-dropdown-item>
+                <el-dropdown-item divided>联系管理员</el-dropdown-item>
+            </el-dropdown-menu>
+        </el-dropdown>
+
+        <h1>方式二：click激活事件</h1>
+        <el-dropdown trigger="click">
+          <span class="el-dropdown-link">
+            下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+            <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>退出系统</el-dropdown-item>
+                <el-dropdown-item disabled>修改密码</el-dropdown-item>
+                <el-dropdown-item divided>联系管理员</el-dropdown-item>
+            </el-dropdown-menu>
+        </el-dropdown>
+
+        <h1>方式三：按钮激活事件</h1>
+        <el-dropdown trigger="click" split-button>
+          <span class="el-dropdown-link">
+            下拉菜单
+          </span>
+            <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>退出系统</el-dropdown-item>
+                <el-dropdown-item disabled>修改密码</el-dropdown-item>
+                <el-dropdown-item divided>联系管理员</el-dropdown-item>
+            </el-dropdown-menu>
+        </el-dropdown>
+    </div>
+</body>
+</html>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+
+        }
+    })
+</script>
